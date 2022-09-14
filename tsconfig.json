@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "target": "es2018",
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "paths": {
+      "code-equality-assertions/*": ["./src/*"],
+      "*": ["./types/*"]
+    }
+  },
+  "ts-node": {
+    "esm": true
+  }
+}
