@@ -26,3 +26,13 @@ export function codeEqual(
     };
   }
 }
+
+
+export function codeContains(
+  actual: string,
+  expected: string
+): boolean {
+  let standardActual = standardize(actual)!;
+  let standardExpected = standardize(expected)!;
+  return standardActual.indexOf(standardExpected) !== -1;
+}

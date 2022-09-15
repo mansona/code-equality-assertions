@@ -14,8 +14,6 @@
     "baseUrl": ".",
     "skipLibCheck": true,
     "paths": {
-      "code-equality-assertions": ["./src/index"],
-      "code-equality-assertions/*": ["./src/*"],
       "*": ["./types/*"]
     }
   },
