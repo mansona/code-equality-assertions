@@ -4,8 +4,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "Node16",
+    "moduleResolution": "Node16",
     "declaration": false,
     "declarationMap": false,
     "sourceMap": true,
@@ -14,6 +14,7 @@
     "baseUrl": ".",
     "skipLibCheck": true,
     "paths": {
+      "code-equality-assertions": ["./src/index"],
       "code-equality-assertions/*": ["./src/*"],
       "*": ["./types/*"]
     }

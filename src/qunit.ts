@@ -1,4 +1,4 @@
-import { codeEqual } from "./index";
+import { codeEqual } from "code-equality-assertions";
 
 import "qunit";
 
@@ -12,7 +12,7 @@ declare global {
   this: Assert,
   actual: string,
   expected: string,
-  message = "code is equal"
+  message = "code should match"
 ) {
   let { result, diff } = codeEqual(actual, expected);
   this.pushResult({
