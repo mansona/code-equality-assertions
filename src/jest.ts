@@ -10,6 +10,11 @@ declare global {
   }
 }
 
+// if our d.ts files under with only the declare global... stuff above, it
+// gets different semantics than if it is detected as an ES module. This seems
+// to trick typescript into making it really be a module. 
+export * from './index.js';
+
 function toEqualCode(
   actualCode: string,
   expectedCode: string,
