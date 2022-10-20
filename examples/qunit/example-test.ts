@@ -12,10 +12,10 @@ module("code-equality", () => {
   });
 
   test("successful contains test", (assert) => {
-    assert.codeContains(`function x() { return 123; }`, '123');
+    assert.codeContains(`function x() { return '123'; }`, '"123"');
   });
 
   test("failed contains test", (assert) => {
-    assert.codeContains(`function x() { return 123; }`, '321');
+    assert.codeContains(`function x() { return '123'; }`, '"321"');
   });
 });

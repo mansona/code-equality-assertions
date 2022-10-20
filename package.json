@@ -5,13 +5,15 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
-    "./qunit": "./dist/qunit.js"
+    "./qunit": "./dist/qunit.js",
+    "./jest": "./dist/jest.js"
   },
   "repository": "https://github.com/ef4/code-equality-assertions",
   "author": "Edward Faulkner <edward@eaf4.com>",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup",
+    "example:jest-node": "NODE_OPTIONS='--experimental-vm-modules' ./node_modules/.bin/jest --config examples/jest/jest.config.cjs",
     "example:qunit-node": "NODE_OPTIONS='--loader ts-node/esm' qunit examples/qunit/example-test.ts",
     "example:qunit-browser": "cd examples/qunit && webpack serve"
   },
@@ -22,12 +24,15 @@
   "license": "MIT",
   "devDependencies": {
     "@types/diff": "^5.0.2",
+    "@types/jest": "^29.2.0",
     "@types/node": "^18.7.18",
     "@types/prettier": "^2.7.0",
     "@types/qunit": "^2.19.2",
     "css-loader": "^6.7.1",
+    "jest": "^29.2.1",
     "qunit": "2.19.1",
     "style-loader": "^3.3.1",
+    "ts-jest": "^29.0.3",
     "ts-loader": "^9.3.1",
     "ts-node": "^10.9.1",
     "tsup": "^6.2.3",
@@ -41,11 +46,15 @@
     "prettier": "^2.7.1"
   },
   "peerDependencies": {
+    "@types/jest": "2",
     "@types/qunit": "2",
     "qunit": "2"
   },
   "peerDependenciesMeta": {
     "@types/qunit": {
+      "optional": true
+    },
+    "@types/jest": {
       "optional": true
     },
     "qunit": {
@@ -57,7 +66,8 @@
     "format": "esm",
     "entry": [
       "src/index.ts",
-      "src/qunit.ts"
+      "src/qunit.ts",
+      "src/jest.ts"
     ]
   }
 }

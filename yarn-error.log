@@ -1,0 +1,89 @@
+Arguments: 
+  /Users/edward/.volta/tools/image/node/14.20.0/bin/node /Users/edward/.volta/tools/image/yarn/1.22.17/bin/yarn.js add --dev jest
+
+PATH: 
+  /Users/edward/.volta/tools/image/yarn/1.22.17/bin:/Users/edward/.volta/tools/image/node/14.20.0/bin:/Users/edward/.rvm/gems/ruby-2.7.4/bin:/Users/edward/.rvm/gems/ruby-2.7.4@global/bin:/Users/edward/.rvm/rubies/ruby-2.7.4/bin:/Users/edward/.volta/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/edward/.rvm/gems/ruby-2.7.4/bin:/Users/edward/.rvm/gems/ruby-2.7.4@global/bin:/Users/edward/.rvm/rubies/ruby-2.7.4/bin:/Users/edward/.volta/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/edward/.cargo/bin:/Users/edward/.rvm/bin:/Users/edward/.rvm/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.20.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/edward/Library/Caches/Yarn/v6/npm-ms-2.1.2-d09d1f357b443f493382a8eb3ccd183872ae6009-integrity/node_modules/ms/index.js' -> '/Users/edward/hacking/code-equality-assertions/node_modules/tsup/node_modules/ms/index.js'
+
+npm manifest: 
+  {
+    "name": "code-equality-assertions",
+    "version": "0.3.0",
+    "description": "",
+    "type": "module",
+    "exports": {
+      ".": "./dist/index.js",
+      "./qunit": "./dist/qunit.js"
+    },
+    "repository": "https://github.com/ef4/code-equality-assertions",
+    "author": "Edward Faulkner <edward@eaf4.com>",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "tsup",
+      "example:jest-node": "NODE_OPTIONS='--loader ts-node/esm' jest examples/jest/example-test.ts",
+      "example:qunit-node": "NODE_OPTIONS='--loader ts-node/esm' qunit examples/qunit/example-test.ts",
+      "example:qunit-browser": "cd examples/qunit && webpack serve"
+    },
+    "files": [
+      "dist"
+    ],
+    "keywords": [],
+    "license": "MIT",
+    "devDependencies": {
+      "@types/diff": "^5.0.2",
+      "@types/node": "^18.7.18",
+      "@types/prettier": "^2.7.0",
+      "@types/qunit": "^2.19.2",
+      "css-loader": "^6.7.1",
+      "qunit": "2.19.1",
+      "style-loader": "^3.3.1",
+      "ts-loader": "^9.3.1",
+      "ts-node": "^10.9.1",
+      "tsup": "^6.2.3",
+      "typescript": "^4.8.3",
+      "webpack": "^5.74.0",
+      "webpack-cli": "^4.10.0",
+      "webpack-dev-server": "^4.11.0"
+    },
+    "dependencies": {
+      "diff": "^5.1.0",
+      "prettier": "^2.7.1"
+    },
+    "peerDependencies": {
+      "@types/qunit": "2",
+      "qunit": "2"
+    },
+    "peerDependenciesMeta": {
+      "@types/qunit": {
+        "optional": true
+      },
+      "qunit": {
+        "optional": true
+      }
+    },
+    "tsup": {
+      "dts": true,
+      "format": "esm",
+      "entry": [
+        "src/index.ts",
+        "src/qunit.ts"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
