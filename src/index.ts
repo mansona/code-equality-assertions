@@ -1,7 +1,6 @@
 import { createPatch } from "diff";
 import prettier from "prettier";
-// @ts-expect-error
-import parser from "prettier/esm/parser-babel.mjs";
+import parser from "prettier/parser-babel.js";
 
 function standardize(code: string): string {
   return prettier.format(code, { parser: "babel", plugins: [parser] });

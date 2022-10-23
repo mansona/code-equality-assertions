@@ -4,9 +4,18 @@
   "description": "",
   "type": "module",
   "exports": {
-    ".": "./dist/index.js",
-    "./qunit": "./dist/qunit.js",
-    "./jest": "./dist/jest.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./qunit": {
+      "import": "./dist/qunit.js",
+      "require": "./dist/qunit.cjs"
+    },
+    "./jest": {
+      "import": "./dist/jest.js",
+      "require": "./dist/jest.cjs"
+    }
   },
   "repository": "https://github.com/ef4/code-equality-assertions",
   "author": "Edward Faulkner <edward@eaf4.com>",
@@ -66,7 +75,7 @@
   },
   "tsup": {
     "dts": true,
-    "format": "esm",
+    "format": ["esm", "cjs"],
     "entry": [
       "src/index.ts",
       "src/qunit.ts",
