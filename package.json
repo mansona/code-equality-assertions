@@ -40,6 +40,7 @@
     "@types/node": "^18.7.18",
     "@types/prettier": "^2.7.0",
     "@types/qunit": "^2.19.2",
+    "@types/babel__core": "^7.1.19",
     "css-loader": "^6.7.1",
     "jest": "^29.2.1",
     "qunit": "2.19.1",
@@ -54,6 +55,7 @@
     "webpack-dev-server": "^4.11.0"
   },
   "dependencies": {
+    "@babel/core": "^7.19.6",
     "diff": "^5.1.0",
     "prettier": "^2.7.1"
   },
@@ -75,7 +77,10 @@
   },
   "tsup": {
     "dts": true,
-    "format": ["esm", "cjs"],
+    "format": [
+      "esm",
+      "cjs"
+    ],
     "entry": [
       "src/index.ts",
       "src/qunit.ts",
