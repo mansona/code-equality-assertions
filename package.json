@@ -20,7 +20,7 @@
   "repository": "https://github.com/ef4/code-equality-assertions",
   "author": "Edward Faulkner <edward@eaf4.com>",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_OPTIONS='--loader ts-node/esm' qunit tests/*-test.ts",
     "build": "tsup",
     "example:jest-node": "NODE_OPTIONS='--experimental-vm-modules' ./node_modules/.bin/jest --config examples/jest/jest.config.cjs",
     "example:qunit-node": "NODE_OPTIONS='--loader ts-node/esm' qunit examples/qunit/example-test.ts",
