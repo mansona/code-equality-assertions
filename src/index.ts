@@ -4,7 +4,7 @@ import parser from "prettier/parser-babel.js";
 import * as babel from '@babel/core';
 
 function standardize(code: string): string {
-  return prettier.format(babel.transformSync(code)!.code!, { parser: "babel", plugins: [parser] });
+  return prettier.format(babel.transform(code, {babelrc: false })!.code!, { parser: "babel", plugins: [parser]});
 }
 
 export function codeEqual(
