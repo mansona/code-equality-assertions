@@ -39,7 +39,7 @@ function assertCodeContains(
   });
 }
 
-export function install(qunit: QUnit) {
-  qunit.assert.codeEqual = assertCodeEqual;
-  qunit.assert.codeContains = assertCodeContains;
+export function install(assert: Assert) {
+  assert.codeEqual = assertCodeEqual;
+  assert.codeContains = assertCodeContains;
 }
