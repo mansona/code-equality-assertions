@@ -1,6 +1,8 @@
 import QUnit from "qunit";
-import "code-equality-assertions/qunit";
+import { install } from "code-equality-assertions/qunit";
 const { module, test } = QUnit;
+
+install(QUnit);
 
 module("code-equality", () => {
   test("successful equality test", (assert) => {

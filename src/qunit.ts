@@ -4,12 +4,12 @@ import "qunit";
 
 declare global {
   interface Assert {
-    codeEqual: typeof codeEqual;
-    codeContains: typeof codeContains;
+    codeEqual: typeof assertCodeEqual;
+    codeContains: typeof assertCodeContains;
   }
 }
 
-(globalThis as any).QUnit.assert.codeEqual = function(
+function assertCodeEqual(
   this: Assert,
   actual: string,
   expected: string,
@@ -24,7 +24,7 @@ declare global {
   });
 };
 
-(globalThis as any).QUnit.assert.codeContains = function(
+function assertCodeContains(
   this: Assert,
   actual: string,
   expected: string,
@@ -37,4 +37,9 @@ declare global {
     expected,
     message
   });
+}
+
+export function install(qunit: QUnit) {
+  qunit.assert.codeEqual = assertCodeEqual;
+  qunit.assert.codeContains = assertCodeContains;
 }
