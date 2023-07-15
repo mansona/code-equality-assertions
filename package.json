@@ -33,6 +33,16 @@
         "types": "./dist/jest.d.ts",
         "default": "./dist/jest.cjs"
       }
+    },
+    "./chai": {
+      "import": {
+        "types": "./dist/chai.d.ts",
+        "default": "./dist/chai.js"
+      },
+      "require": {
+        "types": "./dist/chai.d.ts",
+        "default": "./dist/chai.cjs"
+      }
     }
   },
   "repository": "https://github.com/ef4/code-equality-assertions",
@@ -42,6 +52,7 @@
     "build": "tsup",
     "example:jest-node": "NODE_OPTIONS='--experimental-vm-modules' ./node_modules/.bin/jest --config examples/jest/jest.config.cjs",
     "example:qunit-node": "NODE_OPTIONS='--loader ts-node/esm' qunit examples/qunit/example-test.ts",
+    "example:mocha-chai-node": "mocha examples/mocha/",
     "example:qunit-browser": "cd examples/qunit && webpack serve"
   },
   "files": [
@@ -59,8 +70,10 @@
     "@types/node": "^18.7.18",
     "@types/prettier": "^2.7.0",
     "@types/qunit": "^2.19.2",
+    "chai": "^4.3.7",
     "css-loader": "^6.7.1",
     "jest": "^29.2.1",
+    "mocha": "^10.2.0",
     "qunit": "2.19.1",
     "style-loader": "^3.3.1",
     "ts-jest": "^29.0.3",
@@ -102,7 +115,8 @@
     "entry": [
       "src/index.ts",
       "src/qunit.ts",
-      "src/jest.ts"
+      "src/jest.ts",
+      "src/chai.ts"
     ]
   }
 }

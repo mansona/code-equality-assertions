@@ -18,6 +18,15 @@ QUnit.module('my tests', () => {
 });
 ```
 
+## Chai integration
+
+```js
+const chai = require('chai');
+const { codeEquality } = require("code-equality-assertions/chai");
+
+chai.use(codeEquality)
+```
+
 ## Low-level usage
 
 ```js
